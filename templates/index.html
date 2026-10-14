@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explainable AI Minesweeper</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>🤖 Explainable AI Minesweeper</h1>
+    <p>Constraint reasoning • Search • Probability • Human-readable AI explanations</p>
+  </div>
+</header>
+
+<main>
+<section class="controls card">
+  <label>Difficulty
+    <select id="difficulty">
+      <option value="easy">Easy — 9×9</option>
+      <option value="medium">Medium — 16×16</option>
+      <option value="hard">Hard — 16×30</option>
+      <option value="expert">Expert — 20×30</option>
+    </select>
+  </label>
+  <label>Mines
+    <input id="mines" type="number" min="1" value="10">
+  </label>
+  <button onclick="newGame()">New Game</button>
+  <button class="primary" id="startBtn" onclick="startGame()">▶ Start Game</button>
+  <button onclick="getHint()">💡 Hint <span id="hintCount">3</span></button>
+  <button onclick="cleanFlags()">🚩 Clean Flags</button>
+  <button class="primary" onclick="solve()">🤖 AI Solve</button>
+</section>
+
+<section class="stats">
+  <div class="stat card"><b>⏱ Time</b><span id="timer">0.0s</span></div>
+  <div class="stat card"><b>💣 Mines</b><span id="mineCount">0</span></div>
+  <div class="stat card"><b>🎯 Moves</b><span id="moves">0</span></div>
+  <div class="stat card"><b>🏆 Efficiency</b><span id="efficiency">0</span></div>
+</section>
+
+<section class="layout">
+  <div class="card board-wrap">
+    <div id="status"></div>
+    <div id="board-container"><div id="colLabels"></div><div id="grid-area"><div id="rowLabels"></div><div id="board"></div></div></div>
+  </div>
+  <aside class="card">
+    <h2>AI Reasoning</h2>
+    <div id="reasoning" class="reasoning">Start a game to begin.</div>
+    <hr>
+    <h3>How the AI thinks</h3>
+    <ol>
+      <li>Extract numbered-cell constraints.</li>
+      <li>Propagate guaranteed safe cells and mines.</li>
+      <li>Use subset reasoning between constraints.</li>
+      <li>Use exact frontier enumeration for ambiguous cases.</li>
+      <li>Rank remaining moves by estimated mine probability.</li>
+    </ol>
+    <p class="small">Right-click a closed cell to flag/unflag it.</p>
+  </aside>
+</section>
+</main>
+<script src="/static/js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#0f172a;color:#e5e7eb}
+header{padding:28px 5%;background:#111827;border-bottom:1px solid #334155}h1{margin:0 0 5px;font-size:clamp(24px,4vw,38px)}header p{margin:0;color:#94a3b8}
+main{width:min(1400px,94%);margin:22px auto}.card{background:#111827;border:1px solid #334155;border-radius:16px;padding:16px;box-shadow:0 10px 30px #0003}
+.controls{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.controls label{display:flex;flex-direction:column;gap:5px;color:#94a3b8;font-size:13px}
+select,input,button{font:inherit;border-radius:9px;border:1px solid #475569;background:#1e293b;color:#e5e7eb;padding:10px 12px}
+button{cursor:pointer}button:hover{filter:brightness(1.15)}button.primary{background:#2563eb;border-color:#2563eb}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}.stat{display:flex;justify-content:space-between}.stat span{font-weight:800}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:14px}.board-wrap{overflow:auto}#board-container{width:max-content;margin:8px auto}#colLabels{display:grid;gap:2px;margin-left:30px;margin-bottom:3px}.col-label,.row-label{width:30px;height:22px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:11px;font-weight:700}.row-label{height:30px}.grid-area{display:flex}#grid-area{display:flex}#rowLabels{display:grid;gap:2px;margin-right:3px}#board{display:grid;gap:2px;width:max-content;margin:8px auto}.cell{width:30px;height:30px;border-radius:5px;border:1px solid #475569;background:#334155;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0}.cell.closed:hover{background:#475569}.cell.open{background:#cbd5e1;color:#0f172a}.cell.mine{background:#ef4444}.cell.flag{background:#7c3aed}
+#status{min-height:26px;font-weight:700;color:#93c5fd}.reasoning{height:360px;overflow-y:auto;min-height:0;padding-right:5px;line-height:1.55;color:#cbd5e1}.reason-step{padding:10px;margin:8px 0;border-left:3px solid #60a5fa;background:#0f172a;border-radius:7px}.small{font-size:12px;color:#94a3b8}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+.ai-flag{outline:2px solid #f59e0b}
